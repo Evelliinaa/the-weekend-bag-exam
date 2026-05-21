@@ -1,0 +1,137 @@
+<div class="ay-home-page">
+
+  <nav class="ay-home-nav">
+    <div class="ay-home-nav-left">
+      <a href="#">SHOP</a>
+      <a href="#">SUNGLASSES</a>
+      <a href="#">TRAVEL BAGS</a>
+    </div>
+
+    <div class="ay-home-logo">AY STUDIOS®</div>
+
+    <div class="ay-home-nav-right">
+      <div class="ay-home-dropdown">
+        <button class="ay-home-dropdown-btn">THE WEEKEND BAG⌄</button>
+
+        <div class="ay-home-dropdown-menu">
+          <a href="/functions/">Functions</a>
+          <a href="/design-story/">Design Story</a>
+          <a href="/lifestyle/">Lifestyle</a>
+        </div>
+      </div>
+
+      <a href="#">DK</a>
+      <a href="#">BAG(0)</a>
+    </div>
+  </nav>
+
+  <section class="ay-home-hero">
+    <div class="ay-home-hero-image"></div>
+
+    <div class="ay-home-hero-content">
+      <p class="ay-home-eyebrow">AY Studios® Presents</p>
+
+      <h1>The New<br>Weekend Bag.</h1>
+
+      <div class="ay-home-launch">
+        <span>coming soon</span>
+        <span class="ay-home-line"></span>
+        <span>available online <strong>August 26</strong></span>
+      </div>
+
+      <div class="ay-home-countdown">
+        <div><span id="days">96</span><small>DAYS</small></div>
+        <b>:</b>
+        <div><span id="hours">1</span><small>HOURS</small></div>
+        <b>:</b>
+        <div><span id="minutes">32</span><small>MINUTES</small></div>
+        <b>:</b>
+        <div><span id="seconds">55</span><small>SECONDS</small></div>
+      </div>
+
+      <div class="ay-home-buttons">
+        <a href="https://evelinasneidere-nsbjo.wpcomstaging.com/40-2/" class="ay-home-btn">
+          VIEW THE CAMPAIGN
+        </a>
+
+        <a href="#" class="ay-home-btn">
+          NOTIFY ME
+        </a>
+      </div>
+
+      <p class="ay-home-description">
+        A smaller version of the original Weekend Bag, created to move effortlessly through airports, city routines, and everyday life.
+      </p>
+    </div>
+  </section>
+
+  <footer class="ay-home-footer">
+    <div>
+      <h4>CUSTOMER SERVICE</h4>
+      <p>Resellers</p>
+      <p>Contact us</p>
+      <p>Returns</p>
+      <p>Trustpilot</p>
+      <p>Terms &amp; conditions</p>
+      <p>Cookies</p>
+    </div>
+
+    <div>
+      <h4>THE COMPANY</h4>
+      <p>About</p>
+      <p>Press</p>
+      <p>AY Studios x EYDA</p>
+      <p>Sitemap</p>
+    </div>
+
+    <div>
+      <h4>ETHOS</h4>
+      <p>Follow the sun</p>
+      <p>Responsibility and production</p>
+      <p>Stories</p>
+    </div>
+
+    <div>
+      <h4>FOLLOW US</h4>
+      <p>Instagram</p>
+      <p>LinkedIn</p>
+      <p>Facebook</p>
+    </div>
+  </footer>
+
+</div>
+<script>
+  function updateAYHomeCountdown() {
+    const launchDate = new Date("August 26, 2026 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    if (distance <= 0) {
+      daysEl.innerHTML = "00";
+      hoursEl.innerHTML = "00";
+      minutesEl.innerHTML = "00";
+      secondsEl.innerHTML = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minutesEl.innerHTML = minutes;
+    secondsEl.innerHTML = seconds;
+  }
+
+  updateAYHomeCountdown();
+  setInterval(updateAYHomeCountdown, 1000);
+</script>
